@@ -13,7 +13,7 @@ describe('flickrGalleryListFactory', function() {
 
   }));
 
-  it('should initialize premier module as mocks', function() {
+  it('should call getGallery method from factory', function() {
     factory.getGallery();
     expect(factory.getGallery).toHaveBeenCalled();
   });
