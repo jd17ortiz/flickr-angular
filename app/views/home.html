@@ -1,0 +1,30 @@
+<section class="flickr-galley">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 toolbar">
+        <div class="input-field">
+          <div class="col-xs-6">
+            <input placeholder="Write a topic that may you want to search" type="text" ng-model="flickrGalleryCtrl.filterByTag">
+          </div>
+          <div class="col-xs-6">
+            <a class="waves-effect waves-light btn-large blue lighten-1" ng-init="flickrGalleryCtrl.filterByTag = ''" ng-click="flickrGalleryCtrl.filterByTag = ''">Reset filter</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-4" ng-repeat="picture in flickrGalleryCtrl.gallery | filter : flickrGalleryCtrl.filterByTag">
+        <div class="card" ng-class="!picture.tags ? 'text-center' : ''">
+          <div class="wrap-content">
+            <div class="picture">
+              <img class="responsive-img circle" ng-src="{{picture.media.m}}" alt="Description" />
+            </div>
+            <ul class="tags" ng-if="picture.tags">
+              <li class="cyan lighten-1" ng-repeat="tag in picture.tags.split(' ') | limitTo : 5 | filter : flickrGalleryCtrl.filterByTag" ng-click="flickrGalleryCtrl.filterByTag = tag">
+                <a>{{tag}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
