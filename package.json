@@ -28,7 +28,8 @@
   },
   "keywords": [
     "angular",
-    "flickr"
+    "flickr",
+    "london"
   ],
   "scripts": {
     "start": "npm install; bower install; gulp serve",

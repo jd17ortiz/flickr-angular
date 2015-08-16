@@ -4,8 +4,7 @@
  * Karma unit tests.
  */
 describe('flickrGalleryModule', function() {
-  var $state,
-      view;
+  var $state,view;
 
   beforeEach(module('flickrGallery'));
   beforeEach(inject(function($injector) {

@@ -1,6 +1,6 @@
 ( () => {
   let flickrGalleryList = ($http) => {
-    let url = 'http://api.flickr.com/services/feeds/photos_public.gne?format=json&jsoncallback=JSON_CALLBACK';
+    let url = 'http://api.flickr.com/services/feeds/photos_public.gne?format=json&jsoncallback=JSON_CALLBACK&tags=london';
 
     let gallery = {};
 
