@@ -36,8 +36,8 @@ describe('flickrGalleryCtrl', function() {
     expect(picture.id).toBeDefined();
   });
 
-  it('should call addFavorite method and mark item has favorite', function() {
-    ctrl.addFavorite(picture);
+  it('should call toggleFavorite method and mark item has favorite', function() {
+    ctrl.toggleFavorite(picture);
     var sessionPicture = JSON.parse(sessionStorage[picture.id]);
     expect(sessionPicture.favorite).toBe(true);
   });
@@ -47,7 +47,7 @@ describe('flickrGalleryCtrl', function() {
   });
 
   it('should remove a favorite already on session storage', function() {
-    ctrl.addFavorite(picture);
+    ctrl.toggleFavorite(picture);
     var sessionPicture = JSON.parse(sessionStorage[picture.id]);
     expect(sessionPicture.favorite).toBe(false);
   });
