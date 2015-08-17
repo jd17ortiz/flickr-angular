@@ -4,7 +4,7 @@
 
 
       flickrGalleryList.getGallery().then( (gallery) => {
-        this.gallery = (gallery.data.items);
+        this.gallery = (gallery.items);
       }, (error) => {
         console.log(error);
       });

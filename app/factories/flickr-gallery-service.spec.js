@@ -3,7 +3,7 @@
 /**
  * Karma unit tests.
  */
-describe('flickrGalleryListFactory', function() {
+describe('flickrGalleryListService', function() {
   var factory
 
   beforeEach(module('flickrGallery'));
@@ -13,7 +13,7 @@ describe('flickrGalleryListFactory', function() {
 
   }));
 
-  it('should call getGallery method from factory', function() {
+  it('should call getGallery method from service', function() {
     factory.getGallery();
     expect(factory.getGallery).toHaveBeenCalled();
   });
