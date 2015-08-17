@@ -12,7 +12,8 @@ var jshint = require('gulp-jshint'),
     karma = require('karma').server,
     browserSync = require('browser-sync'),
     reload = browserSync.reload,
-    stylus = require('gulp-stylus');
+    stylus = require('gulp-stylus'),
+    csscomb = require('gulp-csscomb');
 
 
 // Lint Task
@@ -35,12 +36,12 @@ gulp.task('ownfiles', function () {
 // concatenate & minify js
 gulp.task('scripts', function () {
   return gulp.src(['app/**/*.js', '!app/**/*.spec.js'])
-    .pipe( babel() )
-    .pipe( concat('all.js') )
-    .pipe( gulp.dest('dist') )
-    .pipe( rename('all.min.js') )
-    .pipe( uglify())
-    .pipe( gulp.dest('dist'));
+    .pipe(babel())
+    .pipe(concat('all.js'))
+    .pipe(gulp.dest('dist'))
+    .pipe(rename('all.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('dist'));
 
 });
 
@@ -52,7 +53,8 @@ gulp.task('stylus', function () {
         .pipe( stylus({
           compress: true
         }) )
-        .pipe( concat('all.css') )
+        .pipe(concat('all.css'))
+        .pipe(csscomb())
         .pipe(gulp.dest('./dist/css/'))
         .pipe(browserSync.stream());
 });
